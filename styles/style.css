@@ -3,10 +3,9 @@
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
-  padding: 16px; 
+  padding: 40px 16px; /* Заменили height на padding, чтобы блок растягивался */
   width: 1100px;
-  margin:  0 auto;
-  min-height: 293px;
+  margin: 0 auto;
 }
 
 .header__menu {
@@ -15,11 +14,11 @@
 
 .header__links-list {
   display: flex;
-  gap: 25px; /* Расстояние между ссылками */
+  gap: 25px; 
 }
 
 .header__links-list-item {
-  list-style: circle; /* Маркеры у неактивных ссылок */
+  list-style: circle; 
   margin-left: 10px;
 }
 
@@ -97,7 +96,7 @@
   font-family: 'Raleway', sans-serif;
   font-weight: 700;           
   font-size: 100px;           
-  line-height: 1;          
+  line-height: 1.1; /* Уменьшили, чтобы строки не наезжали друг на друга */
   text-transform: uppercase;  
   color: #FFFFFF;
   display: flex;
@@ -108,7 +107,6 @@
   letter-spacing: 0.3em;
 }
 
-/* Выравнивание */
 .aligned-text_left { 
   align-self: flex-start; 
   margin-right: -0.3em; 
@@ -169,10 +167,11 @@
   text-transform: uppercase;
 }
 
+/* Используем Grid вместо Flex, чтобы карточки 100% встали в один ряд */
 .lots__card-list {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 334px);
   gap: 25px; 
-  flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -237,11 +236,8 @@
   display: grid;
   grid-template-columns: 300px 1fr; 
   gap: 40px; 
-  
   width: 1052px; 
-  min-height: 595px; 
   margin: 0 auto; 
-  
   padding-top: 100px; 
   padding-bottom: 100px;
 }
@@ -254,8 +250,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 35px;
-  margin-left: 47px;
+  margin: 0 auto; /* Центрируем логотип в колонке */
 }
 
 .about__logo-image {
@@ -264,16 +259,14 @@
 }
 
 .about__title {
-  width: 291px;
-  height: 47px;
   font-size: 40px;
   text-transform: uppercase;
   margin-bottom: 30px;
-  margin-top: 136px;
+  margin-top: 0; 
 }
 
 .about__text {
-  margin-top: 100px;
+  margin-top: 0;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -283,10 +276,10 @@
 /* --- ШАГ 8: Подвал --- */
 .footer {
   width: 1100px;
-  min-height: 180px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  padding: 50px;
+  padding: 50px 0; /* Убрали жесткую высоту, добавили отступы */
+  margin: 0 auto; /* Центрируем подвал */
   align-items: start;
   background-color: #fff;
   font-style: normal; 
